@@ -1,5 +1,5 @@
 MANAGE=django-admin.py
-SETTINGS=frame.settings
+SETTINGS=curriculum_vitae.settings
 
 test:
 	PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=$(SETTINGS) $(MANAGE) test  test_app

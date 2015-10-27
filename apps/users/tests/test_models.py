@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.test import TestCase
 from apps.users.factories import UserInfoFactory, CyrillicUserInfoFactory
 from apps.users.models import UserInfo

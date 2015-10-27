@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import factory
-from apps.users.models import UserInfo
+from .models import UserInfo
+from .models import UserEducation
 
 
 class UserInfoFactory(factory.Factory):
@@ -33,3 +34,28 @@ class CyrillicUserInfoFactory(factory.Factory):
     email = u"new@example.com"
     skype = u"new"
     phone_number = u"+38063142314"
+
+
+class UserEducationFactory(factory.Factory):
+
+    class Meta:
+        model = UserEducation
+
+    user_id = "1"
+    date_start = "2001-02-02"
+    date_end = "2005-02-02"
+    institution = "VNTU"
+    speciality = "master"
+
+
+class CyrillicUserEducationFactory(factory.Factory):
+
+    class Meta:
+        model = UserEducation
+
+    user_id = "1"
+    date_start = "2001-02-02"
+    date_end = "2005-02-02"
+    institution = "ВНТУ"
+    speciality = "Специалист"
+

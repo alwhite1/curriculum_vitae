@@ -2,7 +2,7 @@ MANAGE=django-admin.py
 SETTINGS=curriculum_vitae.settings
 
 test:
-	PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=$(SETTINGS) $(MANAGE) test  test_app
+	PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=$(SETTINGS) $(MANAGE) test  users
 	flake8 --exclude '*migrations*' apps
 
 func: run test_func

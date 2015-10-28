@@ -54,7 +54,7 @@ TEMPLATES = [
 ]
 
 
-WSGI_APPLICATION = 'frame.wsgi.application'
+WSGI_APPLICATION = 'curriculum_vitae.wsgi.application'
 
 DATABASES = {
     'default': {

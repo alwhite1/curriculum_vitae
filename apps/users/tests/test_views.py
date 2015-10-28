@@ -26,5 +26,5 @@ class MainPageTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_api_not_ajax_request(self):
-        response = self.client.get('/api/', HTTP_X_REQUESTED_WITH='XMLHttpRequest')
-        self.assertEqual(response.status_code, 404)
+        response = self.client.get('/api/')
+        self.assertEqual(response.content, 'Use ajax request')

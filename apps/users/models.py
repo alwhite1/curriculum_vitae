@@ -19,11 +19,13 @@ class UserInfo(models.Model):
 
 class UserEducation(models.Model):
 
-    user_id = models.ForeignKey(to=UserInfo, to_field="id")
+    user_id = models.OneToOneField(to=UserInfo, to_field="id")
     date_start = models.DateField()
     date_end = models.DateField()
     institution = models.TextField()
     speciality = models.TextField()
 
     def __unicode__(self):
-        return UserInfo.objects.filter(id=self.user_id).name + " " + UserInfo.objects.filter(id=self.user_id).last_name + " " +  self.id
+        return UserInfo.objects.filter(id=self.user_id).name + " " + UserInfo.objects.filter(id=self.user_id).last_name + " " + self.id
+
+

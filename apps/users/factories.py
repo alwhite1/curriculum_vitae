@@ -2,6 +2,9 @@
 import factory
 from .models import UserInfo
 from .models import UserEducation
+from .models import UserSkill
+from .models import UserExperience
+
 
 
 class UserInfoFactory(factory.Factory):
@@ -41,7 +44,7 @@ class UserEducationFactory(factory.Factory):
     class Meta:
         model = UserEducation
 
-    user_id = "1"
+    user_id = factory.SubFactory(UserInfoFactory)
     date_start = "2001-02-02"
     date_end = "2005-02-02"
     institution = "VNTU"
@@ -53,9 +56,54 @@ class CyrillicUserEducationFactory(factory.Factory):
     class Meta:
         model = UserEducation
 
-    user_id = "1"
+    user_id = factory.SubFactory(CyrillicUserInfoFactory)
     date_start = "2001-02-02"
     date_end = "2005-02-02"
     institution = "ВНТУ"
     speciality = "Специалист"
 
+
+class UserSkillFactory(factory.Factory):
+
+    class Meta:
+        model = UserSkill
+
+    user_id = factory.SubFactory(UserInfoFactory)
+    section = "DEV"
+    skills = "python"
+
+
+class CyrillicUserSkillFactory(factory.Factory):
+
+    class Meta:
+        model = UserSkill
+
+    user_id = factory.SubFactory(CyrillicUserInfoFactory)
+    section = "Разроботка"
+    skills = "Питон"
+
+
+class UserExperienceFactory(factory.Factory):
+
+    class Meta:
+        model = UserExperience
+
+    user_id = factory.SubFactory(UserInfoFactory)
+    date_start = "2001-02-02"
+    date_end = "2005-02-02"
+    organisation = "Company"
+    position = "master"
+    description = "Do something"
+
+
+class CyrillicUserExperienceFactory(factory.Factory):
+
+    class Meta:
+        model = UserExperience
+
+    user_id = factory.SubFactory(UserInfoFactory)
+    date_start = "2001-02-02"
+    date_end = "2005-02-02"
+    organisation = "Рога и копыта"
+    position = "Раб"
+    description = "Работал работу"

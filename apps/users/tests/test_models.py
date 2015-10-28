@@ -41,6 +41,7 @@ class UserEducationModelTest(TestCase):
         self.assertEqual(UserEducation.objects.count(), 1)
         self.assertEqual(UserEducation.objects.last().institution, u"ВНТУ")
 
+
 class UserSkillModelTest(TestCase):
 
     def test_can_create_new_object(self):
@@ -48,7 +49,7 @@ class UserSkillModelTest(TestCase):
         skill = UserSkillFactory.create()
         skill.user_id = UserInfo.objects.last()
         skill.save()
-        self.assertEqual(UserEducation.objects.count(), 1)
+        self.assertEqual(UserSkill.objects.count(), 1)
 
     def test_can_delete_object(self):
         UserSkill.objects.all().delete()
@@ -60,7 +61,7 @@ class UserSkillModelTest(TestCase):
         skill.user_id = UserInfo.objects.last()
         skill.save()
         self.assertEqual(UserSkill.objects.count(), 1)
-        self.assertEqual(UserSkill.objects.last().section, u"Разроботка")
+        self.assertEqual(UserSkill.objects.last().section, u"Разработка")
 
 
 class UserExperienceModelTest(TestCase):
@@ -83,4 +84,3 @@ class UserExperienceModelTest(TestCase):
         experience.save()
         self.assertEqual(UserExperience.objects.count(), 1)
         self.assertEqual(UserExperience.objects.last().organisation, u"Рога и Копыта")
-

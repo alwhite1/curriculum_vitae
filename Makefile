@@ -3,7 +3,7 @@ SETTINGS=curriculum_vitae.settings
 
 test:
 	PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=$(SETTINGS) $(MANAGE) test  users
-	flake8 --exclude '*migrations*' apps
+	flake8 --exclude '*migrations*' --ignore=E501, F403 apps
 
 func: run test_func
 

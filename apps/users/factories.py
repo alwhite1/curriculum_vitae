@@ -6,7 +6,6 @@ from .models import UserSkill
 from .models import UserExperience
 
 
-
 class UserInfoFactory(factory.Factory):
 
     class Meta:
@@ -79,7 +78,7 @@ class CyrillicUserSkillFactory(factory.Factory):
         model = UserSkill
 
     user_id = factory.SubFactory(CyrillicUserInfoFactory)
-    section = "Разроботка"
+    section = "Разработка"
     skills = "Питон"
 
 
@@ -104,6 +103,6 @@ class CyrillicUserExperienceFactory(factory.Factory):
     user_id = factory.SubFactory(UserInfoFactory)
     date_start = "2001-02-02"
     date_end = "2005-02-02"
-    organisation = "Рога и копыта"
+    organisation = "Рога и Копыта"
     position = "Раб"
     description = "Работал работу"
